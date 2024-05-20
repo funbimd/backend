@@ -3,12 +3,9 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const twilio = require('twilio');
 
-const app = express();
-const port = process.env.PORT || 3000;
-
 // Twilio credentials
-const TWILIO_ACCOUNT_SID = 'your_account_sid';
-const TWILIO_AUTH_TOKEN = 'your_auth_token';
+const TWILIO_ACCOUNT_SID = 'AC13c60ac6bce53919c5d935d2c5581965';
+const TWILIO_AUTH_TOKEN = '0164d95ae1244181a8fd6fc82b4f0eb1';
 const TWILIO_PHONE_NUMBER = 'your_twilio_phone_number';
 
 // MySQL database connection
@@ -41,7 +38,7 @@ app.post('/send-otp', (req, res) => {
             res.status(500).json({ success: false, message: 'Failed to send OTP.' });
         } else {
             // Send OTP via Twilio SMS
-            const client = twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
+            const client = twilio('AC13c60ac6bce53919c5d935d2c5581965','0164d95ae1244181a8fd6fc82b4f0eb1');
             client.messages
                 .create({
                     body: 'Your OTP for login is: ${otp}',
