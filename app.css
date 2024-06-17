@@ -1,0 +1,11 @@
+/* src/App.css */
+/* add this to your css*/
+.App {
+    text-align: center;
+  }
+  
+  input {
+    margin: 10px;
+    padding: 10px;
+    font-size: 1em;
+  }
